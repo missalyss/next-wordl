@@ -3,8 +3,8 @@ import Image from 'next/image'
 import React, {useState} from 'react'
 import Row from './row';
 import styles from '../styles/Home.module.css'
-// import wordlStyles from '../styles/Wordl.module.css'
-const answerString = 'brunt'
+
+const answerString = 'freak'
 const answer = answerString.split('');
 
 export default function Home() {
@@ -13,13 +13,11 @@ export default function Home() {
   guess.split("").forEach((gLetter, gi) => {
     const gObj = {letter: gLetter, color: 'white'}
     if (answer.includes(gLetter)) {
-      // console.log('GUESS INCLUDES LETTER: ', );
       gObj?.color = 'yellow';
     }
     answer.forEach((aLetter, ai) => {
       if (aLetter === gLetter && ai === gi) {
         console.log('LETTERS SAME: ', aLetter, gLetter);
-        // console.log(aLetter, ' ', gObj);
         gObj?.color = 'green';
         return;
       }
@@ -27,20 +25,6 @@ export default function Home() {
     });
     guessArr.push(gObj)
   });
-
-  // guessArr.forEach((gObj) => {
-  //   answer.forEach((aLetter) => {
-  //     if (aLetter === gObj.letter) {
-  //       // console.log('LETTERS SAME: ', );
-  //       return gObj?.color = 'green';
-  //     }
-  //     console.log('', answer, ' ', gObj);
-  //   });
-  //   if (answer.includes(gObj.letter)) {
-  //     // console.log('GUESS INCLUDES LETTER: ', );
-  //     return gObj?.color = 'yellow';
-  //   }
-// });
 
   return (
     <div className={styles.container}>
@@ -73,16 +57,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-          >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+<p>Made with ❤️ by alyssa</p>
       </footer>
     </div>
   )
