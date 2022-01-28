@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import React, {useState} from 'react'
 import Row from './row';
 import styles from '../styles/Home.module.css'
@@ -11,14 +10,13 @@ export default function Home() {
   const [guess, setGuess] = useState('');
   const guessArr = []
   guess.split("").forEach((gLetter, gi) => {
-    const gObj = {letter: gLetter, color: 'white'}
+    const gObj = { letter: gLetter, color: 'white' };
     if (answer.includes(gLetter)) {
-      gObj?.color = 'yellow';
+      gObj.color = 'yellow';
     }
     answer.forEach((aLetter, ai) => {
       if (aLetter === gLetter && ai === gi) {
-        console.log('LETTERS SAME: ', aLetter, gLetter);
-        gObj?.color = 'green';
+        gObj.color = 'green';
         return;
       }
       return;
