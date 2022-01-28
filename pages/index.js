@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import Row from './row';
 import styles from '../styles/Home.module.css'
 
-const answerString = 'freak'
+const answerString = 'white'
 const answer = answerString.split('');
 
 export default function Home() {
